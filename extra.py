@@ -6,7 +6,8 @@ import numpy as np
 
 
 # A function to visualize 2D decision boundaries
-def plot_decision_regions(X, y, classifier, resolution=0.02):
+def plot_decision_regions(X, y, classifier, test_idx=None, 
+                          resolution=0.02):
     
     # setup marker generator and color map
     markers = ('s', 'x', 'o', '^', 'v')
@@ -44,3 +45,21 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
                     label=cl,
                     edgecolor='black'
                    )
+
+    # highlight the test samples
+    if test_idx:
+        # plot all the samples
+        X_test, y_test = X[test_idx, :], y[test_idx]
+
+        plt.scatter(X_test[:, 0], X_test[:, 1],
+                    c='', edgecolor='black', alpha=1.0,
+                    linewidth=1, marker='o',
+                    s=100, label='test set')
+
+
+
+
+
+
+
+
