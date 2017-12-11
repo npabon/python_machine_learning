@@ -1,5 +1,9 @@
 import numpy as np
 
+class LogisticRegressionGD(object):
+    """Logistic Regression classifier using gradient
+    descent."""
+
 class AdalineSGD(object):
     """ADAptive LInear NEuron classifier.
 
