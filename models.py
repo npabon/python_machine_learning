@@ -79,6 +79,7 @@ class LincsRandomForestClassifier(object):
         cell_subsets = itertools.combinations(good_cells, self.n_cells_per_forest)
         tree_predictions_ = []
         for cell_subset in cell_subsets:
+            print(cell_subset)
             # extract appropriate data
             cell_subset_idx = np.array([ 4*i + np.array([0, 1, 2, 3])for i in cell_subset ]).reshape(1,-1)[0].astype(int)
             cell_subset_data = X[cell_subset_idx].reshape(1,-1) 
